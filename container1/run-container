@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+
+# run container1 as daemon
+
+NAME="receiver-container1"
+IMAGE="container1"
+
+docker run -d -p 5000:5000 --name "${NAME}" "${IMAGE}"

@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+# remove container and image and rebuild image
+
+NAME="receiver-container1"
+IMAGE="container1"
+CONTAINER_DIR="/home/mm/dev/git/docker-test/container1/"
+
+docker container stop "${NAME}"
+docker container rm "${NAME}"
+docker image rm "${IMAGE}"
+docker build -t "${IMAGE}" "${CONTAINER_DIR}"

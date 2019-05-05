@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+# run mongodb container2 as daemon
+
+DB_PATH="/home/mm/dev/git/docker-test/container2/data/db"
+NAME="mongo-container2"
+IMAGE="mongo"
+
+docker run -d -p 27017:27017 -v "${DB_PATH}:/data/db" --name "${NAME}" "${IMAGE}"
