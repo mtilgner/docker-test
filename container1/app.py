@@ -3,10 +3,8 @@ from flask_pymongo import PyMongo
 from datetime import datetime
 
 app = Flask(__name__)
-mongo_uri = 'mongodb://172.17.0.3:27017/stringDB'
-
+mongo_uri = 'mongodb://mongo-host-container:27017/stringDB'
 mongo = PyMongo(app, uri=mongo_uri)
-
 
 @app.route('/receive')
 def receive_string():

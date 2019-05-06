@@ -2,7 +2,8 @@
 
 # run container1 as daemon
 
-NAME="receiver-container1"
-IMAGE="container1"
+NAME="string-forwarder-container"
+IMAGE="string-forwarder"
+NETWORK="docker_test_nw"
 
-docker run -d -p 5000:5000 --name "${NAME}" "${IMAGE}"
+docker run -d -p 5000:5000 --network "${NETWORK}" --name "${NAME}" "${IMAGE}"
