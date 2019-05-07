@@ -20,7 +20,7 @@ Alternatively you can get the image from [dockerhub](https://hub.docker.com/r/jm
 ## Setting up the containers
 Now you can set up the containers and run the test.
 
-**Note** it is important for the database container to have `mongo-host-container` as its name or hostname otherwise the other container won't find it. It is also neccessary to create a user-defined network otherwise the containers won't have name resolution within their network.
+**Note** It is important for the database container to have `mongo-host-container` as its name or hostname, otherwise the other container won't find it (this is hardcoded). It is also neccessary to create a user-defined network, otherwise the containers won't have name resolution within their network.
 
 ### Running both containers on the same host
 This is achieved by using a bridge network. First create the network on the host:
@@ -48,7 +48,7 @@ db.strings.find()
 ### Running on different hosts
 You need to create two hosts running docker. This can be done locally or on an external provider. Use docker-machine to manage your hosts. Instructions can be found [here](https://blog.codeship.com/docker-machine-compose-and-swarm-how-they-work-together/) or [here](https://docs.docker.com/machine/examples/ocean/)
 
-Then both hosts have to be [configured] (https://www.digitalocean.com/community/tutorials/how-to-create-a-cluster-of-docker-containers-with-docker-swarm-and-digitalocean-on-ubuntu-16-04) as a _swarm_.
+Then both hosts have to be [configured](https://www.digitalocean.com/community/tutorials/how-to-create-a-cluster-of-docker-containers-with-docker-swarm-and-digitalocean-on-ubuntu-16-04) as a _swarm_.
 
 Now you can create a network spanning both hosts. From the swarm manager node do
 ```
